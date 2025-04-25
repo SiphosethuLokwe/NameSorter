@@ -1,34 +1,34 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorterAPI", "NameSorterAPI.csproj", "{2655E7E9-186D-411B-9E15-5CDF8AE0E4F4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorter.Domain", "NameSorter.Domain\NameSorter.Domain.csproj", "{5B43F6E3-2571-40A6-8BF6-30D3678FDAAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorter.Application", "NameSorter.Application\NameSorter.Application.csproj", "{5FABC96E-A60B-4365-9275-B34ED15D7B92}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorter.Application", "NameSorter.Application\NameSorter.Application.csproj", "{F367BF06-7F43-410C-BB25-E622E8547C31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorter.Domain", "NameSorter.Domain\NameSorter.Domain.csproj", "{23B2D3ED-86C1-407D-AE73-FEF8EC7CE31F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorterAPI", "NameSorterAPI\NameSorterAPI.csproj", "{CAD9415A-6093-403A-A00E-AFFDBEBED3B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2655E7E9-186D-411B-9E15-5CDF8AE0E4F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2655E7E9-186D-411B-9E15-5CDF8AE0E4F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2655E7E9-186D-411B-9E15-5CDF8AE0E4F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2655E7E9-186D-411B-9E15-5CDF8AE0E4F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5FABC96E-A60B-4365-9275-B34ED15D7B92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5FABC96E-A60B-4365-9275-B34ED15D7B92}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5FABC96E-A60B-4365-9275-B34ED15D7B92}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5FABC96E-A60B-4365-9275-B34ED15D7B92}.Release|Any CPU.Build.0 = Release|Any CPU
-		{23B2D3ED-86C1-407D-AE73-FEF8EC7CE31F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23B2D3ED-86C1-407D-AE73-FEF8EC7CE31F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23B2D3ED-86C1-407D-AE73-FEF8EC7CE31F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23B2D3ED-86C1-407D-AE73-FEF8EC7CE31F}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B43F6E3-2571-40A6-8BF6-30D3678FDAAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B43F6E3-2571-40A6-8BF6-30D3678FDAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B43F6E3-2571-40A6-8BF6-30D3678FDAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B43F6E3-2571-40A6-8BF6-30D3678FDAAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F367BF06-7F43-410C-BB25-E622E8547C31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F367BF06-7F43-410C-BB25-E622E8547C31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F367BF06-7F43-410C-BB25-E622E8547C31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F367BF06-7F43-410C-BB25-E622E8547C31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD9415A-6093-403A-A00E-AFFDBEBED3B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD9415A-6093-403A-A00E-AFFDBEBED3B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD9415A-6093-403A-A00E-AFFDBEBED3B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD9415A-6093-403A-A00E-AFFDBEBED3B3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
