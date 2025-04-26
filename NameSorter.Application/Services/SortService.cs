@@ -16,12 +16,12 @@ namespace NameSorter.Application.Services
                 if (string.IsNullOrWhiteSpace(line))
                     continue; // Skip empty lines
 
-                var parts = line.Split(' ', StringSplitOptions.RemoveEmptyEntries); // Split name into parts
+                var parts = line.Split(' ', StringSplitOptions.RemoveEmptyEntries); 
                 if (parts.Length < 2)
-                    continue; // Name must have at least 2 parts
+                    continue; 
 
-                var givenNames = parts.Take(parts.Length - 1).ToList(); // All but last = given names
-                var lastName = parts[parts.Length - 1]; // Last part = last name
+                var givenNames = parts.Take(parts.Length - 1).ToList(); 
+                var lastName = parts[parts.Length - 1];
 
                 result.Add(new PersonName
                 {
@@ -32,7 +32,7 @@ namespace NameSorter.Application.Services
             if (!result.Any())
                 throw new InvalidOperationException("No valid names were parsed from the input.");
 
-            return result; // Return list of parsed names
+            return result;
         }
 
         public List<PersonName> Sort(List<PersonName> names)
@@ -40,7 +40,6 @@ namespace NameSorter.Application.Services
             if (names == null || !names.Any())
                 throw new ArgumentException("List of names cannot be null or empty.", nameof(names));
 
-            // Sort by last name, then by given names
             return names
                 .OrderBy(n => n.LastName)
                 .ThenBy(n => string.Join(" ", n.GivenNames))
