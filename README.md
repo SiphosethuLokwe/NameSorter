@@ -8,6 +8,30 @@ NameSorter is a .NET 8 application designed to sort a list of names. This projec
 - Built with .NET 8 for optimal performance and compatibility.
 - Includes unit tests to ensure code reliability.
 
+  
+## Clean Architecture Overview
+
+This project is structured using Clean Architecture, which separates the application into distinct layers:
+
+1. **Domain Layer**:
+   - Contains the core business logic and entities.
+   - Defines interfaces (e.g., `ISortService`) to abstract dependencies.
+
+2. **Application Layer**:
+   - Implements the business logic defined in the Domain layer.
+   - Contains services like `SortService` that handle parsing and sorting logic.
+
+3. **Infrastructure Layer**:
+   - Handles external concerns such as data access, file I/O, or third-party integrations.
+   - Implements interfaces defined in the Domain layer.
+
+4. **Presentation Layer**:
+   - Responsible for user interaction, such as CLI or GUI.
+   - Invokes the Application layer to perform operations.
+
+This architecture ensures that the core business logic is independent of external frameworks or technologies.
+
+
 ## Prerequisites
 
 To build and run this project, you need:
@@ -18,7 +42,7 @@ To build and run this project, you need:
 ## Getting Started
 
 1. Clone the repository:
-git clone [<repository-url>](https://github.com/SiphosethuLokwe/NameSorter.git) cd NameSorter
+git clone (https://github.com/SiphosethuLokwe/NameSorter.git) cd NameSorter
 
 2. Restore dependencies:
 dotnet restore
@@ -31,11 +55,19 @@ dotnet restore
 
    The Project also has an API with a swagger endpoint where you can upload an unsorted list and it will sort and display it for you : SorterAPI
    
+   Curl
+   curl -X 'POST' \
+  'https://localhost:7119/api/NameSort/upload-and-sort' \
+  -H 'accept: */*' \
+  -H 'Content-Type: multipart/form-data' \
+  -F 'file=@Tetsdata.txt;type=text/plain'
+
+   
 
 ## Running Tests
 
 To run the unit tests, execute the following command:
-dotnet test
+dotnet test NameSorterUnitTests
 
 
 ## CI/CD Integration
@@ -56,15 +88,4 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes and push the branch.
 4. Open a pull request.
 
-## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
-## Acknowledgments
-
-- Built with .NET 8 and C#.
-- Inspired by the need for efficient name sorting solutions.
-
----
-
-Happy coding!
