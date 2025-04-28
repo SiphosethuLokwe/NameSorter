@@ -1,67 +1,67 @@
-Getting Started
-Prerequisites
-.NET 8 SDK installed
+# NameSorter
 
-Build and Run (CLI)
-Open a terminal/command prompt at the solution root.
+NameSorter is a .NET 8 application designed to sort a list of names. This project is built using C# and leverages modern .NET features to ensure high performance and maintainability.
 
-Build the solution:
-dotnet build
+## Features
 
+- Sorts names alphabetically by last name, then by first name.
+- Built with .NET 8 for optimal performance and compatibility.
+- Includes unit tests to ensure code reliability.
 
-run the CLI app with an input file:
+## Prerequisites
 
-bash
-Copy
-Edit
-cd NameSorterCLI
-dotnet run NameSorterCLI ./unsorted-names-list.txt
+To build and run this project, you need:
 
+- .NET 8 SDK installed. You can download it from [Microsoft's .NET website](https://dotnet.microsoft.com/).
+- A code editor like [Visual Studio 2022](https://visualstudio.microsoft.com/) or [Visual Studio Code](https://code.visualstudio.com/).
 
-How It Works
-The console app accepts the path to a file containing an unsorted list of names.
+## Getting Started
 
-It reads the names asynchronously using IFileService (implemented in Infrastructure).
+1. Clone the repository:
+git clone <repository-url> cd NameSorter
 
-It sorts the names using ISortService (implemented in Application).
+2. Restore dependencies:
+dotnet restore
+   
+3. Build the project:
+   dotnet build --configuration Release
+   
+4. Run the application:
+   dotnet run NameSorterCLI ./unsorted-names-list
 
-It writes the sorted names back to an output file.
+## Running Tests
 
-All operations are injected using Dependency Injection.
-
-
-Testing
-You can unit test the core logic easily:
-
-Mock IFileService and ISortService for service unit tests.
-
-Test sorting behavior independently from file system interactions.
-
-The CLI project is thin — it delegates work to the services.
+To run the unit tests, execute the following command:
+dotnet test
 
 
- Design Choices
-Separation of Concerns:
+## CI/CD Integration
 
-Domain models live in Domain
+This project uses Travis CI and github Actions for continuous integration. The `.travis.yml` file is configured to:
 
-Business logic lives in Application
-
-Infrastructure services (file system operations) live in Infrastructure
-
-Console execution is handled in CLI
-
-Dependency Injection:
-
-Host.CreateDefaultBuilder is used to configure services for CLI.
-
-Error Handling:
-
-Console outputs a friendly error message if something fails.
-
-Extensibility:
-
-Easy to add Web API later (solution structure is ready for it).
+- Restore dependencies.
+- Build the project in Release mode.
+- Run unit tests.
 
 
+## Contributing
 
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Commit your changes and push the branch.
+4. Open a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+## Acknowledgments
+
+- Built with .NET 8 and C#.
+- Inspired by the need for efficient name sorting solutions.
+
+---
+
+Happy coding!
