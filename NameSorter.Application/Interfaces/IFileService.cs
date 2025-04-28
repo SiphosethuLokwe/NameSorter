@@ -9,6 +9,7 @@ namespace NameSorter.Application.Interfaces
     public interface IFileService
     {
         Task<IEnumerable<string>> ReadLinesAsync(string path); 
-        Task WriteLinesAsync(string path, IEnumerable<string> lines); 
+        Task WriteLinesAsync(string path, IEnumerable<string> lines);
+
     }
 }

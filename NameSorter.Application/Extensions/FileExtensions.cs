@@ -1,6 +1,9 @@
-﻿namespace SorterAPI.Helpers
+﻿using Microsoft.AspNetCore.Http;
+using System.Text;
+
+namespace NameSorter.Application.Extensions
 {
-    public static class FormFileExtensions
+    public static class FileExtensions
     {
         public static async Task<List<string>> ReadLinesAsync(this IFormFile file)
         {

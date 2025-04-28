@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorter.Application", "N
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SorterAPI", "SorterAPI\SorterAPI.csproj", "{E27D9A34-AEB5-47B2-B374-6358A61C2247}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorterUnitTests", "NameSorterUnitTests\NameSorterUnitTests.csproj", "{C00894EB-B782-43B3-981E-815CC3CC67DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorterCLI", "NameSorterCLI\NameSorterCLI.csproj", "{FA31CF55-D668-447E-9DD6-1D50B72B6161}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E27D9A34-AEB5-47B2-B374-6358A61C2247}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E27D9A34-AEB5-47B2-B374-6358A61C2247}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E27D9A34-AEB5-47B2-B374-6358A61C2247}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C00894EB-B782-43B3-981E-815CC3CC67DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C00894EB-B782-43B3-981E-815CC3CC67DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C00894EB-B782-43B3-981E-815CC3CC67DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C00894EB-B782-43B3-981E-815CC3CC67DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA31CF55-D668-447E-9DD6-1D50B72B6161}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA31CF55-D668-447E-9DD6-1D50B72B6161}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA31CF55-D668-447E-9DD6-1D50B72B6161}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA31CF55-D668-447E-9DD6-1D50B72B6161}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

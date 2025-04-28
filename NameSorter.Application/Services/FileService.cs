@@ -20,6 +20,7 @@ namespace NameSorter.Application.Services
             return await File.ReadAllLinesAsync(path);
         }
 
+  
         public async Task WriteLinesAsync(string path, IEnumerable<string> lines)
         {
             if (string.IsNullOrWhiteSpace(path))

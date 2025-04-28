@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NameSorter.Application.Interfaces;
 using NameSorter.Application.Services;
+using NameSorter.Application.Extensions;
+
 using NameSorterAPI.Models;
-using SorterAPI.Helpers;
 
 namespace SorterAPI.Controllers
 {
