@@ -12,6 +12,7 @@ namespace SorterAPI.Controllers
     {
         private readonly ISortService _sortService;
         private readonly IFileService _fileService;
+       
         public NameSortController(ISortService sortService, IFileService fileservice) {
             _sortService = sortService;
             _fileService = fileservice;
