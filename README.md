@@ -18,7 +18,7 @@ To build and run this project, you need:
 ## Getting Started
 
 1. Clone the repository:
-git clone <repository-url> cd NameSorter
+git clone [<repository-url>](https://github.com/SiphosethuLokwe/NameSorter.git) cd NameSorter
 
 2. Restore dependencies:
 dotnet restore
@@ -28,6 +28,9 @@ dotnet restore
    
 4. Run the application:
    dotnet run NameSorterCLI ./unsorted-names-list
+
+   The Project also has an API with a swagger endpoint where you can upload an unsorted list and it will sort and display it for you : SorterAPI
+   
 
 ## Running Tests
 
