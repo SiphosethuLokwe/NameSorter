@@ -3,66 +3,29 @@ name: .NET Build and Test CI
 on:
   push:
     branches:
-      - master     
+      - master   # Run on push to main branch
   pull_request:
     branches:
-      - master   
+      - master   # Run on pull request to main branch
 
 jobs:
   build:
-    runs-on: ubuntu-latest 
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      
-    - name: Set up .NET SDK
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: '8.0'  
-
-    - name: Restore dependencies
-      run: dotnet restore NameSorter.sln 
-
-    - name: Build the project
-      run: dotnet build NameSorter.sln --configuration Release --no-restore n
-
-    - name: Run unit tests
-      run: dotnet test NameSorter.sln --configuration Release --no-build --verbosity normal  
-
-    - name: Publish project
-      run: dotnet publish NameSorterCLI/NameSorterCLI.csproj --configuration Release --output ./publish  
-
-    - name: Upload build artifacts (optional)
-      uses: actions/upload-artifact@v2
-      with:
-        name: published-app
-        path: ./publish
-
-  deploy:
     runs-on: ubuntu-latest
 
-    needs: build 
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-      
-    - name: Set up .NET SDK
+
+    - name: Set up .NET
       uses: actions/setup-dotnet@v2
       with:
-        dotnet-version: '8.0'  
+        dotnet-version: '8.0'  # Use .NET 8 SDK
 
-    - name: Download build artifacts
-      uses: actions/download-artifact@v2
-      with:
-        name: published-app
-        path: ./published
+    - name: Restore dependencies
+      run: dotnet restore NameSorter.sln
 
-    - name: Deploy the app to hosting platform (optional)
-      run: |
-        # Example deployment command, update with your hosting platform (e.g., Azure, AWS, etc.)
-        echo "Deploying to hosting platform..."
-        # Example for deploying to Azure:
-        # az webapp deploy --name <your-webapp-name> --resource-group <your-resource-group> --src-path ./published
+    - name: Build the solution
+      run: dotnet build NameSorter.sln --configuration Release --no-restore
 
+    - name: Run unit tests
+      run: dotnet test NameSorter.sln --configuration Release --no-build --verbosity normal
