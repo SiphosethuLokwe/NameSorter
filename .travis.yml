@@ -1,0 +1,9 @@
+language: csharp
+mono: none
+dotnet: 8.0
+solution: NameSorter.sln
+
+script:
+  - dotnet restore
+  - dotnet build --configuration Release
+  - dotnet test --configuration Release --no-build
