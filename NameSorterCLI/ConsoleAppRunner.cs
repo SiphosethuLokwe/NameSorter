@@ -1,4 +1,4 @@
-﻿using NameSorter.Application.Interfaces;
+﻿using NameSorter.Domain.Interfaces;
 using NameSorter.Application.Services;
 
 namespace SorterCLI
@@ -18,7 +18,7 @@ namespace SorterCLI
         {
             if (args.Length == 0)
             {
-                Console.WriteLine("Usage: SorterCLI <path-to-input-file>");
+                Console.WriteLine("Usage: NameSortAPI <path-to-input-file>");
                 return;
             }
 

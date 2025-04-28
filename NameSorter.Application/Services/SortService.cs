@@ -1,4 +1,5 @@
-﻿using NameSorter.Domain.Models;
+﻿using NameSorter.Domain.Interfaces;
+using NameSorter.Domain.Models;
 
 namespace NameSorter.Application.Services
 {

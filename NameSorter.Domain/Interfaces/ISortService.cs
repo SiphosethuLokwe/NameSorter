@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NameSorter.Application.Services
+namespace NameSorter.Domain.Interfaces
 {
     public  interface ISortService
     {

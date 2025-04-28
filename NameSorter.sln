@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorterUnitTests", "Name
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorterCLI", "NameSorterCLI\NameSorterCLI.csproj", "{FA31CF55-D668-447E-9DD6-1D50B72B6161}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NameSorter.Infrastructure", "NameSorter.Infrastructure\NameSorter.Infrastructure.csproj", "{CB54DE57-B125-4253-93B0-FC9711185CB5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{FA31CF55-D668-447E-9DD6-1D50B72B6161}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FA31CF55-D668-447E-9DD6-1D50B72B6161}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FA31CF55-D668-447E-9DD6-1D50B72B6161}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB54DE57-B125-4253-93B0-FC9711185CB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB54DE57-B125-4253-93B0-FC9711185CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB54DE57-B125-4253-93B0-FC9711185CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB54DE57-B125-4253-93B0-FC9711185CB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

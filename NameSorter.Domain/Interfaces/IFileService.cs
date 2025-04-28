@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NameSorter.Application.Interfaces
+namespace NameSorter.Domain.Interfaces
 {
     public interface IFileService
     {

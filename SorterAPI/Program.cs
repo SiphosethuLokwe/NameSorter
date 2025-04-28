@@ -1,4 +1,4 @@
-using NameSorter.Application.Interfaces;
+using NameSorter.Domain.Interfaces;
 using NameSorter.Application.Services;
 using NLog;
 using SorterAPI.Common;

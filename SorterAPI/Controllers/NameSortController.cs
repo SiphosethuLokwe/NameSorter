@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using NameSorter.Application.Interfaces;
-using NameSorter.Application.Services;
+using NameSorter.Domain.Interfaces;
 using NameSorter.Application.Extensions;
 
 using NameSorterAPI.Models;

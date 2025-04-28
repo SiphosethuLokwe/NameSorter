@@ -1,27 +1,22 @@
 ﻿using NameSorter.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace NameSorter.Application.Services
+namespace NameSorter.Infrastructure
 {
     public class FileService : IFileService
     {
 
         public async Task<IEnumerable<string>> ReadLinesAsync(string path)
         {
-            if(string.IsNullOrWhiteSpace(path))
+            if (string.IsNullOrWhiteSpace(path))
                 throw new ArgumentNullException(nameof(path), "File path cannot be empty.");
 
-            if(!File.Exists(path))
+            if (!File.Exists(path))
                 throw new FileNotFoundException("File not found.", path);
 
             return await File.ReadAllLinesAsync(path);
         }
 
-  
+
         public async Task WriteLinesAsync(string path, IEnumerable<string> lines)
         {
             if (string.IsNullOrWhiteSpace(path))

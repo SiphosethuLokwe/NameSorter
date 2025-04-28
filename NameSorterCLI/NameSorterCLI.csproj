@@ -14,6 +14,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NameSorter.Application\NameSorter.Application.csproj" />
+    <ProjectReference Include="..\NameSorter.Domain\NameSorter.Domain.csproj" />
+    <ProjectReference Include="..\NameSorter.Infrastructure\NameSorter.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
