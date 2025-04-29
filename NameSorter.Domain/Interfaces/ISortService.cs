@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace NameSorter.Domain.Interfaces
 {
-    public  interface ISortService
+    public interface ISortService
     {
-        List<PersonName> ParseNames(IEnumerable<string> lines); 
-        List<PersonName> Sort(List<PersonName> names); 
+        List<PersonName> ParseNames(IEnumerable<string> lines);
+        List<PersonName> Sort(List<PersonName> names);
+    }
 }
