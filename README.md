@@ -51,9 +51,9 @@ dotnet restore
    dotnet build --configuration Release
    
 4. Run the application:
-   dotnet run NameSorterCLI ./unsorted-names-list
+ dotnet run --project NameSorterCLI -- ./unsorted-names-list.txt
 
-   The Project also has an API with a swagger endpoint where you can upload an unsorted list and it will sort and display it for you : SorterAPI
+ The Project also has an API with a swagger endpoint where you can upload an unsorted list and it will sort and display it for you : SorterAPI
    
    Curl
    curl -X 'POST' \
