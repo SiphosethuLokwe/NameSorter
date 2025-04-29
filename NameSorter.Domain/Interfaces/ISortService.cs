@@ -9,7 +9,6 @@ namespace NameSorter.Domain.Interfaces
 {
     public  interface ISortService
     {
-        List<PersonName> ParseNames(IEnumerable<string> lines); // Parse raw name strings into model objects
-        List<PersonName> Sort(List<PersonName> names); // Sort name objects by last name then given names
-    }
+        List<PersonName> ParseNames(IEnumerable<string> lines); 
+        List<PersonName> Sort(List<PersonName> names); 
 }

@@ -13,7 +13,6 @@ namespace NameSorter.Domain.Models
 
         public override string ToString()
         {
-            // Convert back to full name string
             return string.Join(" ", GivenNames.Append(LastName));
         }
     }

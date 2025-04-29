@@ -47,7 +47,7 @@ namespace NameSorterUnitTests
             // Act
             using (var sw = new StringWriter())
             {
-                Console.SetOut(sw); // Redirect Console output to capture itfewe
+                Console.SetOut(sw); 
                 await _appRunner.RunAsync(args);
                 var result = sw.ToString();
 
@@ -166,8 +166,6 @@ namespace NameSorterUnitTests
                 _mockFileService.Verify(f => f.WriteLinesAsync(It.IsAny<string>(), It.Is<IEnumerable<string>>(list => list.SequenceEqual(writtenNames))), Times.Once);
             }
         }
-
-
 
         public List<PersonName> GeneratePersonNames(int count)
         {

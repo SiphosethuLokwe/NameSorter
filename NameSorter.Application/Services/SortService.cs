@@ -15,7 +15,7 @@ namespace NameSorter.Application.Services
             foreach (var line in lines)
             {
                 if (string.IsNullOrWhiteSpace(line))
-                    continue; // Skip empty lines
+                    continue;
 
                 var parts = line.Split(' ', StringSplitOptions.RemoveEmptyEntries); 
                 if (parts.Length < 2)
