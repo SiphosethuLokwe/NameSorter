@@ -50,7 +50,6 @@ namespace SorterCLI
                 var sortedNames = _sortService.Sort(parsedNames);
                 var outputLines = sortedNames.Select(n => n.ToString()).ToList();
 
-                // ✨ Display the sorted names on screen
                 Console.WriteLine("Sorted Names:\n-------------");
                 foreach (var name in outputLines)
                 {

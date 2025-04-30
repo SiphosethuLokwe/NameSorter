@@ -20,22 +20,40 @@ namespace NameSorterUnitTests
         }
 
         [Fact]
-        public async Task RunAsync_WithNoArguments_PrintsUsageMessage()
+        public async Task RunAsync_UsesDefaultFile_WhenNoArgsAndFileExists()
         {
             // Arrange
-            var args = new string[] { };
+            var tempFile = Path.Combine(AppContext.BaseDirectory, "unsorted-names-list.txt");
+
+            var inputLines = new List<string> { "John Doe", "Alice Smith" };
+            await File.WriteAllLinesAsync(tempFile, inputLines); // create file temporarily
+
+            var parsedNames = new List<PersonName>
+            {
+             new PersonName { GivenNames = new List<string> { "Alice" }, LastName = "Smith" },
+               new PersonName { GivenNames = new List<string> { "John" }, LastName = "Doe" }
+            };
+
+            _mockFileService.Setup(f => f.ReadLinesAsync(It.IsAny<string>())).ReturnsAsync(inputLines);
+            _mockSortService.Setup(s => s.ParseNames(It.IsAny<IEnumerable<string>>())).Returns(parsedNames);
+            _mockSortService.Setup(s => s.Sort(It.IsAny<List<PersonName>>())).Returns(parsedNames.OrderBy(n => n.LastName).ToList());
+            _mockFileService.Setup(f => f.WriteLinesAsync(It.IsAny<string>(), It.IsAny<IEnumerable<string>>())).Returns(Task.CompletedTask);
 
             // Act
             using (var sw = new StringWriter())
             {
                 Console.SetOut(sw);
-                await _appRunner.RunAsync(args);
+                await _appRunner.RunAsync(Array.Empty<string>());
                 var result = sw.ToString();
 
                 // Assert
-                Assert.Contains("Usage: NameSortAPI <path-to-input-file>", result);
+                Assert.Contains("No args provided. Using default file", result);
+                Assert.Contains("Sorted names saved to:", result);
             }
+
+            File.Delete(tempFile);
         }
+
 
         [Fact]
         public async Task RunAsync_WithEmptyFile_PrintsNoLinesFoundMessage()
