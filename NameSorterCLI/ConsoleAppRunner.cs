@@ -16,13 +16,25 @@ namespace SorterCLI
 
         public async Task RunAsync(string[] args)
         {
+            string filePath;
+
             if (args.Length == 0)
             {
-                Console.WriteLine("Usage: NameSortAPI <path-to-input-file>");
-                return;
-            }
+                filePath = Path.Combine(AppContext.BaseDirectory, "unsorted-names-list.txt");
 
-            var filePath = args[0];
+                if (!File.Exists(filePath))
+                {
+                    Console.WriteLine("Default file not found: " + filePath);
+                    return;
+                }
+
+                Console.WriteLine("No args provided. Using default file: " + filePath);
+            }
+            else
+            {
+                filePath = args[0];
+            }
+;
 
             try
             {
@@ -33,11 +45,17 @@ namespace SorterCLI
                     Console.WriteLine("No lines found in the file.");
                     return;
                 }
-                var parsedNames = _sortService.ParseNames(lines);
 
+                var parsedNames = _sortService.ParseNames(lines);
                 var sortedNames = _sortService.Sort(parsedNames);
                 var outputLines = sortedNames.Select(n => n.ToString()).ToList();
 
+                // ✨ Display the sorted names on screen
+                Console.WriteLine("Sorted Names:\n-------------");
+                foreach (var name in outputLines)
+                {
+                    Console.WriteLine(name);
+                }
 
                 var outputPath = Path.Combine(Path.GetDirectoryName(filePath)!, "sorted-names-list.txt");
                 await _fileService.WriteLinesAsync(outputPath, outputLines);
@@ -49,5 +67,6 @@ namespace SorterCLI
                 Console.WriteLine($"Error: {ex.Message}");
             }
         }
+
     }
 }
